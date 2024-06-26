@@ -1,4 +1,4 @@
-![image](https://github.com/joon999/aiku-24-1-DoNotClickUnder1.3B/assets/133974077/01299d7c-6dfd-4882-ac03-957d402fef59)# 프로젝트명
+![image](https://github.com/joon999/aiku-24-1-DoNotClickUnder1.3B/assets/133974077/01299d7c-6dfd-4882-ac03-957d402fef59)# 1.3B 이하면 클릭하지 마세요
 
 📢 20##년 1/여름/2/겨울학기 [AIKU](https://github.com/AIKU-Official) 활동으로 진행한 프로젝트입니다
 🎉 20##년 1/여름/2/겨울학기 AIKU Conference 열심히상 수상!
