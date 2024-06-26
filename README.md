@@ -36,11 +36,11 @@ LLM보다 SLM이 점차 주목받고 있기 때문에,
 
 Evaluation을 위해서는 아래 3가지 메트릭을 기반으로 gpt4o API로 confident-ai의 deepeval을 이용하여 평가를 진행했습니다. 
 
- PV_metric : 상품(P)과 핵심가치(V)가 광고문구에 적절히 반영 되었는가?
+ - PV_metric : 상품(P)과 핵심가치(V)가 광고문구에 적절히 반영 되었는가?
  
- Naturalness_metric: 광고문구가 문법적, 의미론적으로 자연스러운가?
+ - Naturalness_metric: 광고문구가 문법적, 의미론적으로 자연스러운가?
  
- Creativity_metric : 광고문구가 창의적인가?
+ - Creativity_metric : 광고문구가 창의적인가?
 
 <img src="./asset/models_evaluation.png">
 
