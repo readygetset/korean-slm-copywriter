@@ -41,14 +41,11 @@ Evaluation을 위해서는 아래 3가지 메트릭을 기반으로 gpt4o API로
 <img src="./asset/models_evaluation.png">
 
 
-## 환경 설정
-
-(Requirements, Anaconda, Docker 등 프로젝트를 사용하는데에 필요한 요구 사항을 나열해주세요)
-
 ## 사용 방법
 
-본 프로젝트의 핵심은 생성된 데이터셋이기 때문에 데이터셋을 활용하여 다양한 모델에 파인튜닝을 진행하면 됩니다.
-예시로 huggingface의 라마2 기반 42dot/42dot_LLM-SFT-1.3B 모델의 PEFT 파인튜닝 체크포인트를 허깅페이스에 업로드해노았습니다.
+본 프로젝트의 핵심은 생성된 데이터셋이기 때문에 데이터셋을 활용하여 다양한 모델에 파인튜닝을 진행하면 됩니다.\n
+예시로 huggingface의 라마2 기반 42dot/42dot_LLM-SFT-1.3B 모델의 PEFT 파인튜닝 체크포인트를 허깅페이스에 업로드했습니다.
+
 https://huggingface.co/jha999/1.3B_42dot
 
 ## 예시 결과
