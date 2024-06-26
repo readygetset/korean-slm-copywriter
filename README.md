@@ -53,7 +53,9 @@ https://huggingface.co/jha999/1.3B_42dot
 
 ## 예시 결과
 
-(사용 방법을 실행했을 때 나타나는 결과나 시각화 이미지를 보여주세요)
+42dot/42dot_LLM-SFT-1.3B 모델의 상품: 역사수업, 가치: 문화적인, 과거의 에 대한 카피라이팅 생성 결과
+
+<img src="./asset/42dot_result_example.png">
 
 ## 팀원
 
