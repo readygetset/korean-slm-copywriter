@@ -28,6 +28,8 @@ LLM보다 SLM이 점차 주목받고 있기 때문에,
 
 이후 구축된 데이터셋으로 언어모델을 파인튜닝하였으며, 비교를 위해 SLM 외에도 bert기반 모델에도 학습을 진행했습니다.
 
+[image]/asset/models_result.png
+
 Evaluation을 위해서는 아래 3가지 메트릭을 기반으로 gpt4o API로 confident-ai의 deepeval을 이용하여 평가를 진행했습니다. 
 
  PV_metric : 상품(P)과 핵심가치(V)가 광고문구에 적절히 반영 되었는가?
