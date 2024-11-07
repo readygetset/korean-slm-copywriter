@@ -1,54 +1,37 @@
-# 1.3B 이하면 클릭하지 마세요
+# SLM Copywriter
 
 ## Introduction
 
 With **Small Language Models (SLMs)** gaining attention over Large Language Models (LLMs), we assumed that building a **high-quality dataset** would be key to unlocking better SLM performance. In this project, we focused on creating a custom dataset and implementing a high-performing SLM specifically for **copywriting tasks** by leveraging existing LLM capabilities.
 
-**Target Tasks for LLMs:**
-Short-length generation tasks that don’t require extensive tokens.
-Creative tasks that address challenging aspects where SLMs traditionally struggle.
-Based on these objectives, we implemented a model optimized for generating compelling copywriting.
+Since the dataset will be generated using an existing LLM, we decided to implement a copywriting generation model that meets the following three conditions:
+1. **Tasks that existing LLMs excel at**
+2. **Generation tasks that require short output lengths, avoiding excessive token counts**
+3. **Tasks that address challenging aspects, such as creativity, where traditional SLMs have limitations**
 
 
+## Methods
+### 🗂️ Dataset Generation
+To build a **high-quality dataset**, we prioritized three main factors:
+1. **Data Quantity**
+2. **Data Quality**
+3. **Data Diversity**
 
+For **data quality**, we used the **xionic-ko-llama-3-70b API** from Xionic, based on Llama3, as a cost-effective alternative to GPT-4 API.
+Additionally, by **collecting real, high-quality copywriting samples** and integrating them into prompts as examples, we significantly elevated the quality of our generated copy.
 
-
-LLM보다 SLM이 점차 주목받고 있기 때문에,
-고품질 데이터셋 구축을 SLM 성능 개선의 핵심이라 가정하고 직접 데이터셋을 생성하여 고성능의 SLM을 구현하는 프로젝트를 진행했습니다.
-데이터셋을 기존의 LLM으로 생성할 것이므로,
-  1. 기존의 LLM이 잘 하는 task
-  2. 생성 토큰 수가 많지 않은 짧은 길이의 생성 task
-  3. 창의성 등 기존의 SLM에 남아있는 도전적인 과제를 해결할만한 task
-
-위 3가지 조건을 만족하는 카피라이팅 생성 모델을 구현하기로 하였습니다.
-
-
-## 방법론
-
-퀄리티 높은 데이터셋을 구축하기 위해서 크게 3가지를 고려했습니다.
- 1. 데이터의 양
- 2. 데이터의 질
- 3. 데이터의 다양성
-
-데이터의 질을 높이기 위해서 gpt4 API를 사용하면 가장 좋겠지만 비용적인 측면에서 한계가 있어 xionic사에서 제공하는 라마3 기반의 xionic-ko-llama-3-70b API를 사용하여 데이터를 생성했습니다.
-
-또한 퀄리티 좋은 실제 카피라이팅 사례를 직접 모아 프롬프트에 예시로서 사용하는 것으로 생성되는 카피라이팅의 질을 월등히 높일 수 있었습니다.
-
-데이터의 다양성 문제를 해결하기 위해 카피라이팅 생성 시 제공되는 상품과 가치 pair의 다양성과 연관성을 높이기 위해 노력했으며, 프롬프트에 사용되는 실제 카피라이팅 사례도 수집된 목록에서 무작위로 선정되도록 했습니다.
-
-총 11,445개의 카피라이팅을 생성하였고 이후 필터링을 거쳐 10,478개의 상품-가치, 카피라이팅으로 이루어진 데이터셋을 구축하였습니다.
-
-이후 이 데이터셋으로 언어모델을 파인튜닝하였으며, 비교를 위해 SLM 외에도 bert기반 모델에도 학습을 진행했습니다.
-
+For **data diversity**, we worked to increase the **variety and relevance of product-value pairs** provided during copy generation. We also ensured that real copywriting examples in the prompts were randomly selected from a curated list to add variety.
+- **Dataset Summary**: Generated 11,445 initial pieces of copywriting, filtered down to **10,478 high-quality product-value pairs and copywriting** entries.
+  
+After curating the dataset, we **fine-tuned multiple language models**, including both SLMs and a BERT-based model for comparison.
 <img src="./asset/models_result.png">
 
-Evaluation을 위해서는 아래 3가지 메트릭을 기반으로 gpt4o API로 confident-ai의 deepeval을 이용하여 평가를 진행했습니다. 
+### 🧪 Evaluation Metrics
+To evaluate our model's output, we used the following three metrics and conducted assessments via **DeepEval** with the GPT-4o API:
 
- - PV_metric : 상품(P)과 핵심가치(V)가 광고문구에 적절히 반영 되었는가?
- 
- - Naturalness_metric: 광고문구가 문법적, 의미론적으로 자연스러운가?
- 
- - Creativity_metric : 광고문구가 창의적인가?
+- **PV Metric**: Evaluates how well the **product (P)** and **core value (V)** are represented in the copywriting.
+- **Naturalness Metric**: Assesses whether the copywriting is **grammatically correct and semantically natural**.
+- **Creativity Metric**: Judges the **creativity** of the copywriting.
 
 <img src="./asset/models_evaluation.png">
 
@@ -61,7 +44,7 @@ For reference, we’ve uploaded a PEFT fine-tuning checkpoint for the Llama2-bas
 
 ➡️ https://huggingface.co/jha999/1.3B_42dot
 
-## 예시 결과
+## Example Output
 
 Sample generated by the **42dot/42dot_LLM-SFT-1.3B** model for a product-value pair:
 - Product: History Lesson
