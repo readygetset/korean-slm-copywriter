@@ -1,4 +1,4 @@
-# SLM Copywriter
+# Korean SLM Copywriter
 
 ## Introduction
 
